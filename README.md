@@ -1,512 +1,287 @@
-# Netstage-ai
-🛰️ NetSage AI
-Evidence-First AI Network Troubleshooting & Diagnosis Platform
+# 🛰️ NetSage AI
 
-NetSage AI is an intelligent network troubleshooting platform built for Cisco networking labs, Packet Tracer environments, CCNA learners, and junior network engineers.
+## Evidence-First AI-Powered Network Troubleshooting Platform
 
-The platform combines deterministic networking rules, Generative AI, Cisco CLI evidence, and human-in-the-loop validation to transform raw network symptoms into structured, explainable troubleshooting recommendations.
+> **Diagnose smarter. Validate with evidence. Keep humans in control.**
 
-Instead of simply asking an AI model “What is wrong with my network?”, NetSage AI follows a controlled diagnostic pipeline:
+**[🚀 Try Live Demo](https://netstage-ai-eentie5da9xxb8bphmoxzj.streamlit.app/)**
 
-┌──────────────────────────────────────────────────────────────┐
-│                    NETSAGE AI PLATFORM                       │
-└──────────────────────────────────────────────────────────────┘
+NetSage AI is an AI-assisted network troubleshooting platform for **Cisco networking labs, Packet Tracer, CCNA learners, and junior engineers**. It combines **deterministic rule-based analysis, Generative AI, CLI evidence evaluation, and human-in-the-loop review** to transform network symptoms into explainable diagnoses.
 
-        Network Symptom / Topology / CLI Evidence
-                         │
-                         ▼
-              ┌─────────────────────┐
-              │ Evidence Collection │
-              └──────────┬──────────┘
-                         │
-                         ▼
-              ┌─────────────────────┐
-              │ Deterministic Rule  │
-              │      Engine         │
-              └──────────┬──────────┘
-                         │
-                         ▼
-              ┌─────────────────────┐
-              │   AI Diagnostic     │
-              │      Engine         │
-              │      Gemini         │
-              └──────────┬──────────┘
-                         │
-                         ▼
-              ┌─────────────────────┐
-              │ Structured Diagnosis│
-              │ Root Cause / Layer  │
-              │ Evidence / Severity │
-              └──────────┬──────────┘
-                         │
-                         ▼
-              ┌─────────────────────┐
-              │   Human Review      │
-              │ Accept / Edit /     │
-              │ Reject              │
-              └──────────┬──────────┘
-                         │
-                         ▼
-              ┌─────────────────────┐
-              │ Verification &      │
-              │ Review Logging      │
-              └──────────┬──────────┘
-                         │
-                         ▼
-              ┌─────────────────────┐
-              │ Analytics & Insights│
-              └─────────────────────┘
-🎯 Problem Statement
+---
 
-Network troubleshooting often requires engineers to interpret multiple sources of information simultaneously:
+## 🎯 The Problem
 
-User-reported symptoms
-Network topology
-Cisco IOS configuration
-Routing tables
-Interface states
-VLAN configuration
-ACLs
-NAT translations
-DHCP information
-DNS configuration
-Routing protocols
+Network troubleshooting requires connecting multiple pieces of evidence to identify root causes:
 
-For beginners and junior engineers, the difficult part is not memorizing commands. The difficult part is connecting evidence to the correct root cause.
+- User-reported symptoms
+- Network topology
+- Cisco IOS configuration
+- Routing tables, VLAN config, ACLs, NAT, DHCP, DNS
 
-NetSage AI addresses this gap by providing a structured troubleshooting workflow that combines traditional rule-based analysis with AI-assisted reasoning.
+**The challenge:** Beginners don't know which commands to run, why they matter, or how to interpret results.
 
-🧠 Core Philosophy
+---
 
-NetSage AI follows three principles:
+## ✨ Our Solution
 
-1. Evidence First
+NetSage AI provides a **structured diagnostic workflow**:
 
-The system should reason from the evidence supplied by the user.
+```
+Network Evidence → Rule Analysis → AI Diagnosis → Human Review → Remediation → Verification
+```
 
-It should never invent Cisco CLI output or unseen configuration.
+### Key Differentiators
 
-2. AI Assisted, Not AI Autonomous
+✅ **Evidence-First Diagnosis** — AI uses only supplied evidence, never invents CLI output  
+✅ **Hybrid AI + Rules** — Deterministic rule engine validates AI recommendations  
+✅ **Human-in-the-Loop** — Every diagnosis can be accepted, edited, or rejected  
+✅ **Explainable Output** — Root cause + Evidence + Next steps + Verification  
+✅ **No Auto Execution** — AI recommendations only; humans apply changes  
+✅ **Educational** — Teaches *why* problems occur, not just solutions  
 
-The AI provides a diagnosis and recommendations, but it does not directly modify network devices.
+---
 
-3. Human in the Loop
+## 🏗️ System Architecture
 
-Every diagnosis passes through a review stage:
+```
+┌─────────────────────────────────────┐
+│     Streamlit User Interface        │
+└────────────────┬────────────────────┘
+                 │
+    ┌────────────┴────────────┐
+    │                         │
+    ▼                         ▼
+┌──────────────┐      ┌──────────────────┐
+│ Rule Engine  │      │ AI Diagnostician │
+│(Deterministic│      │   (Gemini)       │
+│ Networking)  │      └──────────────────┘
+└──────────┬───┘              │
+           └────────┬─────────┘
+                    ▼
+         ┌─────────────────────┐
+         │ Structured Diagnosis│
+         └────────┬────────────┘
+                  │
+                  ▼
+         ┌─────────────────────┐
+         │  Human Review       │
+         │ Accept/Edit/Reject  │
+         └────────┬────────────┘
+                  │
+                  ▼
+         ┌─────────────────────┐
+         │ Analytics & History │
+         └─────────────────────┘
+```
 
-AI Diagnosis
-     ↓
-Human Review
-     ├── Accept
-     ├── Edit
-     └── Reject
+---
 
-This makes the system more suitable for educational environments and responsible AI workflows.
+## 🧠 How It Works
 
-🏗️ System Architecture
+### 1️⃣ Evidence Collection
+User provides:
+- Network symptom (what's broken)
+- Topology/lab notes
+- Cisco CLI evidence (`show ip route`, `show vlan brief`, etc.)
 
-NetSage AI is divided into several logical layers.
+### 2️⃣ Deterministic Analysis
+Rule engine detects known problems:
+- Interface down / VLAN missing / Route missing
+- Duplicate IP / Gateway mismatch / Subnet mask wrong
+- DHCP failure / NAT issue / ACL denial
 
-                    ┌───────────────────┐
-                    │   Streamlit UI    │
-                    └─────────┬─────────┘
-                              │
-                              ▼
-                    ┌───────────────────┐
-                    │ Application Layer │
-                    └─────────┬─────────┘
-                              │
-              ┌───────────────┴───────────────┐
-              │                               │
-              ▼                               ▼
-     ┌──────────────────┐           ┌──────────────────┐
-     │ Rule Engine      │           │ AI Diagnostic    │
-     │                  │           │ Engine           │
-     │ Deterministic    │           │ Gemini           │
-     │ Network Checks   │           │ Structured JSON  │
-     └────────┬─────────┘           └────────┬─────────┘
-              │                              │
-              └──────────────┬───────────────┘
-                             ▼
-                    ┌───────────────────┐
-                    │ Diagnosis Schema  │
-                    │ Pydantic          │
-                    └─────────┬─────────┘
-                              │
-                              ▼
-                    ┌───────────────────┐
-                    │ Human Review      │
-                    └─────────┬─────────┘
-                              │
-                              ▼
-                    ┌───────────────────┐
-                    │ Persistence Layer │
-                    └─────────┬─────────┘
-                              │
-                              ▼
-                    ┌───────────────────┐
-                    │ Analytics Layer  │
-                    └───────────────────┘
-🔬 Diagnostic Pipeline
+### 3️⃣ AI Diagnosis
+Gemini analyzes evidence + rule findings → produces structured diagnosis:
+```json
+{
+  "root_cause": "Missing route to remote VLAN",
+  "osi_layer": 3,
+  "confidence": "High",
+  "severity": "High",
+  "evidence": ["Routing table lacks destination network"],
+  "next_commands": ["show ip route", "show running-config"],
+  "remediation": ["Add static route or configure dynamic routing"],
+  "verification": ["Ping remote destination", "Verify routing table"]
+}
+```
 
-A troubleshooting session follows this pipeline:
+### 4️⃣ Human Review
+Reviewer can:
+- ✅ **Accept** — Diagnosis is correct
+- ✏️ **Edit** — Correct the diagnosis
+- ❌ **Reject** — Diagnosis unsupported
 
-Step 1 — Evidence Collection
+System retains both original AI response and human correction.
 
-The user provides:
+### 5️⃣ Verification
+System provides commands to verify the fix worked.
 
-Symptom
-Topology
-Cisco IOS show output
+---
 
-For example:
+## 📚 What's Included
 
-PC can reach its gateway but cannot reach a server
-in another VLAN.
-Step 2 — Deterministic Analysis
+| Component | Details |
+|-----------|---------|
+| **Cases** | 30+ realistic network scenarios covering VLAN, Routing, DHCP, DNS, NAT, ACL, OSPF, RIP, Trunking, SSH, IP Addressing |
+| **Rule Engine** | 15+ deterministic checks for common network faults |
+| **AI Model** | Google Gemini with structured JSON validation |
+| **Human Review** | Accept/Edit/Reject workflow with full audit trail |
+| **Analytics** | Issue categories, severity, OSI layers, AI/human agreement rates |
+| **Demo Mode** | Works offline without API key for testing |
 
-The rule engine evaluates known networking patterns.
+---
 
-Examples:
+## 🚀 Quick Start
 
-Interface administratively down
-Duplicate IP
-Wrong subnet mask
-Gateway mismatch
-Missing VLAN
-Missing route
-Trunk VLAN mismatch
-DHCP failure
-NAT configuration issue
-ACL denial
+### Installation
 
-This layer provides predictable, explainable checks independent of the LLM.
+```bash
+# Clone repository
+git clone https://github.com/Aastha-1407/Netstage-ai.git
+cd Netstage-ai
 
-Step 3 — AI Diagnosis
+# Create virtual environment
+python -m venv .venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 
-Gemini receives the supplied evidence together with the deterministic findings.
+# Install dependencies
+pip install -r requirements.txt
+```
 
-The AI produces a structured diagnosis containing:
+### Configuration
 
-Root Cause
-OSI Layer
-Issue Type
-Severity
-Confidence
-Evidence
-Next Commands
-Remediation
-Verification
-Reviewer Note
-Step 4 — Validation
+Create `.env` file:
+```
+GEMINI_API_KEY=your_api_key_here
+```
 
-The AI response is validated against a structured schema.
+Or use Streamlit Secrets in production.
 
-This prevents malformed AI output from silently entering the application.
+### Run Application
 
-Step 5 — Human Review
+```bash
+streamlit run app.py
+```
 
-The reviewer can:
+Application opens at `http://localhost:8501`
 
-Accept
+---
 
-if the diagnosis is correct.
+## 🧰 Technology Stack
 
-Edit
+| Layer | Technology |
+|-------|------------|
+| **UI** | Streamlit |
+| **Backend** | Python |
+| **AI** | Google Gemini + GenAI SDK |
+| **Validation** | Pydantic |
+| **Data** | Pandas, Plotly |
+| **Storage** | CSV, JSON |
+| **Deployment** | Streamlit Community Cloud |
 
-if the diagnosis needs correction.
+---
 
-Reject
+## 📁 Project Structure
 
-if the diagnosis is unsupported.
-
-The original AI response and human decision are retained.
-
-Step 6 — Verification
-
-The system provides commands and checks that can be used to verify whether the issue was actually resolved.
-
-Step 7 — Analytics
-
-Review data feeds the analytics layer.
-
-This allows the project to measure:
-
-AI agreement
-Correction rate
-Rejection rate
-Common network problems
-Severity distribution
-OSI-layer distribution
-Most frequent root causes
-📁 Project Architecture
+```
 netsage-ai/
-│
-├── app.py
-│
+├── app.py                          # Main Streamlit application
 ├── core/
-│   ├── __init__.py
-│   ├── rule_checker.py
-│   ├── ai_diagnostician.py
-│   ├── fallback_diagnostician.py
-│   └── schemas.py
-│
+│   ├── rule_checker.py             # Deterministic networking rules
+│   ├── ai_diagnostician.py         # Gemini integration
+│   ├── fallback_diagnostician.py   # Offline/demo mode
+│   └── schemas.py                  # Pydantic validation schemas
 ├── data/
-│   ├── cases.csv
-│   └── review_log.csv
-│
+│   ├── cases.csv                   # 30+ troubleshooting cases
+│   └── review_log.csv              # Human review history
 ├── utils/
-│   ├── __init__.py
-│   ├── storage.py
-│   └── validators.py
-│
-├── assets/
-│
-├── diagnose_prompt.md
+│   ├── storage.py                  # Data persistence
+│   └── validators.py               # Input validation
 ├── requirements.txt
 ├── .env.example
-├── .gitignore
 └── README.md
-🧩 Major Components
-🎨 Streamlit Interface
+```
 
-Provides the interactive application experience.
+---
 
-Main modules:
+## 🎓 Example Workflow
 
-Dashboard
-Troubleshooting Studio
-Case Library
-Rule Checker
-Human Review
-Analytics
-Settings
-⚙️ Rule Engine
+**Problem:** PC in VLAN 30 can reach gateway but not server in VLAN 20.
 
-The deterministic layer identifies known network problems without depending on an LLM.
+**User Input:**
+```
+Symptom: Cannot reach server in different VLAN
+Evidence: show ip route
+Evidence: show vlan brief
+Evidence: show interfaces trunk
+```
 
-This improves:
+**System Process:**
+1. Rule engine checks routing table → detects missing route
+2. Gemini analyzes: "Layer 3 routing issue"
+3. AI recommends: "Add static route to 10.20.0.0/24"
+4. Human reviews: ✓ Accepted
+5. Verification: User pings server → success
 
-Explainability
-Reliability
-Repeatability
-Debuggability
-🤖 AI Diagnostic Engine
+**Result:** User learns *why* the fix worked and *how* to troubleshoot similar issues.
 
-Gemini provides contextual reasoning over the supplied evidence.
+---
 
-The AI is not responsible for basic deterministic checks alone. Instead, it works alongside the rule engine.
+## 🛡️ Responsible AI Design
 
-Rules = deterministic evidence
-AI = contextual reasoning
-Human = final decision
-🧾 Schema Validation
+- ✅ Evidence-based reasoning (no fabricated CLI output)
+- ✅ Confidence awareness (communicates uncertainty)
+- ✅ Human approval required (no autonomous changes)
+- ✅ Explainable output (shows evidence + reasoning)
+- ✅ No auto-execution (AI suggestions only)
+- ✅ Audit trail (retains all diagnoses and reviews)
 
-Pydantic validates AI responses before they reach the UI.
+---
 
-This creates a controlled interface between the LLM and application.
+## 🔮 Future Roadmap
 
-Gemini
-   ↓
-JSON
-   ↓
-Pydantic Validation
-   ↓
-Diagnosis Object
-   ↓
-Streamlit UI
-👨‍⚖️ Human Review System
+- Real Cisco device SSH integration
+- Packet Tracer topology visualization
+- Configuration comparison and diff
+- Cisco documentation retrieval (RAG)
+- PostgreSQL backend
+- User authentication & role-based access
+- Team collaboration
+- Automated test case generation
 
-The review layer is one of the most important parts of the project.
+---
 
-It records:
+## 👥 Team
 
-AI Diagnosis
-     +
-Human Decision
-     +
-Human Correction
-     +
-Reviewer Notes
+| Member | Role |
+|--------|------|
+| **Aastha Sanodiya** | Project Lead, Full-Stack Developer |
+| **Deeksha Pandit** | AI & Responsible AI Engineer |
+| **Aryan Ravi** | Network Diagnostics & Rule Engine |
+| **Aaditya Kumar Mishra** | Data, Testing & Analytics |
 
-This creates a feedback dataset that can later be used to evaluate and improve the diagnostic system.
+---
 
-📊 Analytics
+## 📄 License
 
-The analytics dashboard provides visibility into the system's behavior.
+MIT License
 
-Example metrics:
+---
 
-Total Cases
-Diagnostics Run
-Human Reviews
-AI Agreement
-Corrections
-Rejections
-Critical Issues
+## ⚠️ Disclaimer
 
-Visualizations include:
+NetSage AI is an **educational and decision-support platform**.
 
-Issue categories
-Severity
-OSI layers
-Review outcomes
-AI/human agreement
-Common root causes
-📚 Dataset
+- AI recommendations should be reviewed by a qualified human before production deployment
+- System does not automatically execute network configuration commands
+- Intended for learning, labs, and non-critical environments
+- Always verify changes on test networks first
 
-The project contains 30+ realistic network troubleshooting scenarios covering areas such as:
+---
 
-VLAN
-Routing
-DHCP
-DNS
-NAT
-ACL
-Wireless
-Trunking
-OSPF
-RIP
-SSH
-IP addressing
-Gateway configuration
-Interface failures
+## 🚀 [Try Live Demo](https://netstage-ai-eentie5da9xxb8bphmoxzj.streamlit.app/)
 
-Each case contains structured troubleshooting information rather than just a question/answer pair.
+---
 
-🛡️ Responsible AI Architecture
-
-NetSage AI intentionally avoids fully autonomous network modification.
-
-The system follows:
-
-          ┌─────────────┐
-          │   Evidence  │
-          └──────┬──────┘
-                 ↓
-          ┌─────────────┐
-          │ Rule Engine │
-          └──────┬──────┘
-                 ↓
-          ┌─────────────┐
-          │     AI      │
-          └──────┬──────┘
-                 ↓
-          ┌─────────────┐
-          │ Diagnosis   │
-          └──────┬──────┘
-                 ↓
-          ┌─────────────┐
-          │   Human     │
-          │   Review    │
-          └──────┬──────┘
-                 ↓
-          ┌─────────────┐
-          │ Verification│
-          └─────────────┘
-
-AI-generated Cisco commands are recommendations only.
-
-The application never automatically executes configuration changes on network devices.
-
-🚀 Technology Stack
-Layer	Technology
-UI	Streamlit
-Language	Python
-AI	Google Gemini
-AI SDK	Google GenAI
-Validation	Pydantic
-Data Processing	Pandas
-Visualization	Plotly
-Network Concepts	Cisco IOS / Packet Tracer
-Storage	CSV / JSON
-Deployment	Streamlit Community Cloud
-🔐 Security
-
-NetSage AI follows basic security practices:
-
-API keys stored through environment variables/secrets
-No hard-coded credentials
-No automatic network configuration execution
-Structured AI output validation
-Human approval before remediation
-Graceful handling of missing AI credentials
-💡 Example Workflow
-User:
-"PC can reach gateway but cannot reach server."
-
-                ↓
-
-Cisco Evidence:
-show ip route
-
-                ↓
-
-Rule Engine:
-Possible missing route detected
-
-                ↓
-
-Gemini:
-Likely root cause:
-Missing route to remote VLAN
-
-Confidence:
-High
-
-OSI:
-Layer 3
-
-                ↓
-
-Recommended Command:
-show ip route
-
-                ↓
-
-Human Review:
-✓ Accepted
-
-                ↓
-
-Verification:
-Ping server
-Check routing table
-Confirm connectivity
-🎓 Intended Use
-
-NetSage AI is designed for:
-
-CCNA students
-Networking students
-Cisco Packet Tracer labs
-Network troubleshooting practice
-Junior network engineers
-Networking instructors
-AI-assisted technical education
-Responsible AI demonstrations
-🚀 Future Roadmap
-
-Potential future enhancements include:
-
-Real Cisco device integration
-SSH-based read-only diagnostics
-Packet Tracer integration
-Network topology visualization
-Automated configuration diff
-RAG-based Cisco documentation retrieval
-More advanced network telemetry
-PostgreSQL backend
-Authentication and role-based access
-Team collaboration
-Reviewer feedback-driven model evaluation
-Historical incident similarity search
-📌 Project Vision
-
-NetSage AI aims to bridge the gap between networking knowledge and practical troubleshooting reasoning.
-
-Instead of giving engineers another chatbot, the platform provides a structured diagnostic workflow:
-
-Observe → Analyze → Explain → Review → Verify
-
-The result is an AI-assisted network troubleshooting environment that emphasizes evidence, explainability, human judgment, and practical Cisco networking skills.
+**Questions?** Open an issue or check the [GitHub repository](https://github.com/Aastha-1407/Netstage-ai).
