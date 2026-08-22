@@ -256,16 +256,10 @@ Evidence: show interfaces trunk
 
 | Member | Role |
 |--------|------|
-| **Aastha Sanodiya** | Project Lead, Full-Stack Developer |
-| **Deeksha Pandit** | AI & Responsible AI Engineer |
+| **Deeksha Pandit** | Full-Stack Developer |
+| **Aastha Sanodiya** | AI & Responsible AI Engineer |
 | **Aryan Ravi** | Network Diagnostics & Rule Engine |
 | **Aaditya Kumar Mishra** | Data, Testing & Analytics |
-
----
-
-## 📄 License
-
-MIT License
 
 ---
 
@@ -282,6 +276,3 @@ NetSage AI is an **educational and decision-support platform**.
 
 ## 🚀 [Try Live Demo](https://netstage-ai-eentie5da9xxb8bphmoxzj.streamlit.app/)
 
----
-
-**Questions?** Open an issue or check the [GitHub repository](https://github.com/Aastha-1407/Netstage-ai).
