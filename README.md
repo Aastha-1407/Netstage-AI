@@ -31,7 +31,7 @@ NetSage AI provides a **structured diagnostic workflow**:
 Network Evidence → Rule Analysis → AI Diagnosis → Human Review → Remediation → Verification
 ```
 
-### Key Differentiators
+## Key Differentiators
 
 ✅ **Evidence-First Diagnosis** — AI uses only supplied evidence, never invents CLI output  
 ✅ **Hybrid AI + Rules** — Deterministic rule engine validates AI recommendations  
@@ -79,19 +79,19 @@ Network Evidence → Rule Analysis → AI Diagnosis → Human Review → Remedia
 
 ## 🧠 How It Works
 
-### 1️⃣ Evidence Collection
+## 1️⃣ Evidence Collection
 User provides:
 - Network symptom (what's broken)
 - Topology/lab notes
 - Cisco CLI evidence (`show ip route`, `show vlan brief`, etc.)
 
-### 2️⃣ Deterministic Analysis
+## 2️⃣ Deterministic Analysis
 Rule engine detects known problems:
 - Interface down / VLAN missing / Route missing
 - Duplicate IP / Gateway mismatch / Subnet mask wrong
 - DHCP failure / NAT issue / ACL denial
 
-### 3️⃣ AI Diagnosis
+## 3️⃣ AI Diagnosis
 Gemini analyzes evidence + rule findings → produces structured diagnosis:
 ```json
 {
@@ -106,7 +106,7 @@ Gemini analyzes evidence + rule findings → produces structured diagnosis:
 }
 ```
 
-### 4️⃣ Human Review
+## 4️⃣ Human Review
 Reviewer can:
 - ✅ **Accept** — Diagnosis is correct
 - ✏️ **Edit** — Correct the diagnosis
@@ -114,7 +114,7 @@ Reviewer can:
 
 System retains both original AI response and human correction.
 
-### 5️⃣ Verification
+## 5️⃣ Verification
 System provides commands to verify the fix worked.
 
 ---
@@ -134,7 +134,7 @@ System provides commands to verify the fix worked.
 
 ## 🚀 Quick Start
 
-### Installation
+## Installation
 
 ```bash
 # Clone repository
@@ -149,7 +149,7 @@ source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-### Configuration
+## Configuration
 
 Create `.env` file:
 ```
@@ -158,7 +158,7 @@ GEMINI_API_KEY=your_api_key_here
 
 Or use Streamlit Secrets in production.
 
-### Run Application
+## Run Application
 
 ```bash
 streamlit run app.py
