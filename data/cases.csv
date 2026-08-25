@@ -1,3 +1,4 @@
+#By Aaditya
 case_id,symptom,topology_note,show_outputs,expected_fault,osi_layer,concept_tag,severity
 TC001,PC1 cannot obtain IP address via DHCP,PC1 -> SW1 (Fa0/1) -> R1 (Gi0/0.10),"SW1# show vlan brief: Fa0/1 in VLAN 10 active. R1# show ip interface brief: Gi0/0.10 is up/up. R1# show run int gi0/0.10: interface GigabitEthernet0/0.10 | encapsulation dot1Q 10 | ip address 192.168.10.1 255.255.255.0",Missing DHCP Relay (ip helper-address) on router sub-interface,3,DHCP,High
 TC002,PC1 cannot ping Gateway 192.168.10.1,PC1 -> SW1 (Fa0/1) -> R1 (Gi0/0),"SW1# show interfaces Fa0/1 status: Fa0/1 disabled administratively down. SW1# show vlan brief: Fa0/1 in VLAN 10",Switchport Fa0/1 is administratively down (shutdown),1,Interface,High
