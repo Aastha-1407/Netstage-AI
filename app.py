@@ -66,7 +66,7 @@ REVIEW_COLUMNS = [
 
 if not os.path.exists("data"):
     os.makedirs("data")
-
+# By Aryan
 def load_reviews():
     if not os.path.exists(LOG_PATH) or os.path.getsize(LOG_PATH) == 0:
         df = pd.DataFrame(columns=REVIEW_COLUMNS)
