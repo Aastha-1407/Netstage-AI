@@ -95,7 +95,7 @@ def load_cases():
 
 df_cases = load_cases()
 
-# ----------------- NAVIGATION -----------------
+# ------------------- NAVIGATION ---------------------
 diagnostician = AIDiagnostician()
 
 st.markdown("""
@@ -223,7 +223,7 @@ if mode == "Troubleshooting Studio":
             commands = "\n".join(ai_res.get("remediation_steps", []))
             st.code(commands if commands else "No script generated", language="cisco")
 
-            # ----------------- HUMAN REVIEW CARD -----------------
+            # ----------------- HUMAN REVIEW CARD --------------------------
             st.markdown("---")
             st.subheader("03  Human review")
             with st.form("human_review_form"):
@@ -304,3 +304,5 @@ elif mode == "Case Repository":
             filtered = filtered[filtered["concept_tag"].isin(filter_tag)]
 
         st.dataframe(filtered, use_container_width=True)
+
+#finished
