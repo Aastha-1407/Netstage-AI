@@ -4,7 +4,9 @@
 
 > **Diagnose smarter. Validate with evidence. Keep humans in control.**
 
-**[🚀 Try Live Demo](https://netstage-ai-eentie5da9xxb8bphmoxzj.streamlit.app/)**
+**[Watch Demo Video](https://youtube.com/shorts/bCv7K6amdSI?si=1S7kQqBkDWJza0pR)**
+
+
 
 NetSage AI is an AI-assisted network troubleshooting platform for **Cisco networking labs, Packet Tracer, CCNA learners, and junior engineers**. It combines **deterministic rule-based analysis, Generative AI, CLI evidence evaluation, and human-in-the-loop review** to transform network symptoms into explainable diagnoses.
 
